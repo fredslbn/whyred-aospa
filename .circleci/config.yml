@@ -8,7 +8,7 @@ jobs:
           command: |
             apt update && apt upgrade -y
             apt install -f -y git
-            ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && date
+            ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && date
             git clone --depth=1 https://github.com/fredslbn/whyred-aospa.git -b main builder_kernel
             cd builder_kernel
             cp -af sources.list /etc/apt/

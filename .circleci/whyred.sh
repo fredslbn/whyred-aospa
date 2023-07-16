@@ -41,7 +41,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
 TANGGAL=$(date +"%F%S")
 
 # Specify Final Zip Name
-ZIPNAME="SUPER.KERNEL-WHYRED[CAF]-$(TZ=Asia/Jakarta date +"%Y%m%d-%H%M").zip"
+ZIPNAME="SUPER.KERNEL-WHYRED-CAF-$(TZ=Asia/Bangkok date +"%Y%m%d-%H%M").zip"
 FINAL_ZIP=${ZIPNAME}-${DEVICE}-${DATE}.zip
 FINAL_ZIP_ALIAS=Karenultulip-${DATE}.zip
 
