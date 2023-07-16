@@ -48,7 +48,7 @@ FINAL_ZIP_ALIAS=Karenultulip-${DATE}.zip
 ##----------------------------------------------------------##
 # Specify compiler.
 
-COMPILER=azure
+COMPILER=proton
 
 ##----------------------------------------------------------##
 # Specify Linker
@@ -98,7 +98,7 @@ function cloneTC() {
 
 	elif [ $COMPILER = "proton" ];
 	then
-	git clone --depth=1 https://github.com/kdrag0n/proton-clang.git clang
+	git clone --depth=1 https://github.com/kdrag0n/proton-clang.git -b master clang
 	PATH="${KERNEL_DIR}/clang/bin:$PATH"
 	
 	elif [ $COMPILER = "xrage" ];
