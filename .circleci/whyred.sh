@@ -355,7 +355,7 @@ START=$(date +"%s")
 	       
 	fi
 	
-	echo "**** Verify Image.gz-dtb & dtbo.img ****"
+	echo "**** Verify Image.gz-dtb ****"
     ls $(pwd)/out/arch/arm64/boot/Image.gz-dtb
     #ls $(pwd)/out/arch/arm64/boot/dtbo.img
     
