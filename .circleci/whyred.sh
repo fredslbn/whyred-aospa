@@ -135,7 +135,7 @@ function cloneTC() {
 	
 	
     # Clone AnyKernel
-    git clone --depth=1 https://github.com/missgoin/AnyKernel3.git
+    # git clone --depth=1 https://github.com/missgoin/AnyKernel3.git
 
 	}
 
@@ -180,7 +180,7 @@ function exports() {
         export SUBARCH=arm64
         
         # Export Local Version
-        #export LOCALVERSION="-${VERSION}"
+        # export LOCALVERSION="-${VERSION}"
         
         # KBUILD HOST and USER
         export KBUILD_BUILD_HOST=Pancali
@@ -190,8 +190,8 @@ function exports() {
 	    export DISTRO=$(source /etc/os-release && echo "${NAME}")
 	    
 	    # Server caching for speed up compile
-	    #export LC_ALL=C && export USE_CCACHE=1
-	    #ccache -M 100G
+	    # export LC_ALL=C && export USE_CCACHE=1
+	    # ccache -M 100G
 	
 	}
         
@@ -357,7 +357,7 @@ START=$(date +"%s")
 	
 	echo "**** Verify Image.gz-dtb ****"
     ls $(pwd)/out/arch/arm64/boot/Image.gz-dtb
-    #ls $(pwd)/out/arch/arm64/boot/dtbo.img
+    # ls $(pwd)/out/arch/arm64/boot/dtbo.img
     
 }
 
@@ -365,16 +365,16 @@ START=$(date +"%s")
 function zipping() {
 	# Copy Files To AnyKernel3 Zip
 	cp $IMAGE AnyKernel3
-	#cp $DTBO AnyKernel3
-	#find $DTB -name "*.dtb" -exec cat {} + > AnyKernel3/dtb
+	# cp $DTBO AnyKernel3
+	# find $DTB -name "*.dtb" -exec cat {} + > AnyKernel3/dtb
 	
 	# Zipping and Push Kernel
 	cd AnyKernel3 || exit 1
         zip -r9 ${ZIPNAME} *
         MD5CHECK=$(md5sum "$ZIPNAME" | cut -d' ' -f1)
         echo "Zip: $ZIPNAME"
-        #curl -T $FINAL_ZIP_ALIAS temp.sh; echo
-        #curl -T $FINAL_ZIP_ALIAS https://oshi.at; echo
+        # curl -T $FINAL_ZIP_ALIAS temp.sh; echo
+        # curl -T $FINAL_ZIP_ALIAS https://oshi.at; echo
         curl --upload-file $ZIPNAME https://free.keep.sh
     cd ..
 }
